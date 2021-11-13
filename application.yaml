@@ -1,0 +1,19 @@
+# 注意一定要使用UTF-8的格式來保存
+spring:
+ profiles:
+  active:
+  - active
+  
+---
+
+spring:
+ profiles: dev #開發環境
+ application:
+  name: microservicecloud-config-myself-dev
+
+---
+spring:
+ profiles: test #測試環境
+ application:
+  name: microservicecloud-config-myself-test
+  
