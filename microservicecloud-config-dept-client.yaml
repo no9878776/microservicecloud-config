@@ -1,7 +1,7 @@
 spring:
- profiles:
-  active:
-  - dev
+  profiles:
+    active:
+      - dev
 ---
 server:
   port: 8001
@@ -10,7 +10,7 @@ mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
   type-aliases-package: com.myself.springcloud.entity
   mapper-locations:
-    - classpath:mybatis/mapper/**/*.xml
+   - classpath:mybatis/mapper/**/*.xml
 spring:
   profiles: dev
   application:
@@ -29,7 +29,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance:
     instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
     prefer-ip-address: true #訪問路徑可以顯示IP地址
@@ -40,8 +40,6 @@ info:
   build.artifactId: @project.artifactId@ #配合父工程build配置的$開頭$結尾
   build.version: @project.version@
 
-
-  
 ---
 server:
   port: 8001
@@ -69,7 +67,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance:
     instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
     prefer-ip-address: true #訪問路徑可以顯示IP地址
