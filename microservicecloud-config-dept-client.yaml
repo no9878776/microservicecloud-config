@@ -15,6 +15,17 @@ spring:
   profiles: dev
   application:
     name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #dataSource類型
+    driver-class-name: org.gjt.mm.mysql.Driver #驅動類型
+    url: jdbc:mysql://localhost:3306/cloudDB01 #連接DB名字
+    username: root
+    password: 1004
+    dbcp2:
+      min-idle: 5 #資料庫連接池中最少的連接數
+      initial-size: 5 #初始化連接數
+      max-idle: 5 #最多連接數
+      max-wait-millis: 200 #最大等待獲取連接的時間
 
 ---
 
@@ -29,6 +40,17 @@ spring:
   profiles: test
   application:
     name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #dataSource類型
+    driver-class-name: org.gjt.mm.mysql.Driver #驅動類型
+    url: jdbc:mysql://localhost:3306/cloudDB02 #連接DB名字
+    username: root
+    password: 1004
+    dbcp2:
+      min-idle: 5 #資料庫連接池中最少的連接數
+      initial-size: 5 #初始化連接數
+      max-idle: 5 #最多連接數
+      max-wait-millis: 200 #最大等待獲取連接的時間
 
 
 
