@@ -26,6 +26,13 @@ spring:
       initial-size: 5 #初始化連接數
       max-idle: 5 #最多連接數
       max-wait-millis: 200 #最大等待獲取連接的時間
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
+    prefer-ip-address: true #訪問路徑可以顯示IP地址
 
 ---
 
@@ -51,6 +58,12 @@ spring:
       initial-size: 5 #初始化連接數
       max-idle: 5 #最多連接數
       max-wait-millis: 200 #最大等待獲取連接的時間
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
+    prefer-ip-address: true #訪問路徑可以顯示IP地址
 
 
