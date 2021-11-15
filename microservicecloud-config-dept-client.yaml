@@ -11,6 +11,10 @@ mybatis:
   type-aliases-package: com.myself.springcloud.entity
   mapper-locations:
    - classpath:mybatis/mapper/**/*.xml
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-dept
 
 ---
 
@@ -21,5 +25,10 @@ mybatis:
   type-aliases-package: com.myself.springcloud.entity
   mapper-locations:
    - classpath:mybatis/mapper/**/*.xml
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-dept
+
 
 
