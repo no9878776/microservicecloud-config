@@ -2,79 +2,23 @@ spring:
   profiles:
     active:
       - dev
+      
 ---
+
 server:
   port: 8001
-
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.myself.springcloud.entity
-  mapper-locations:
-   - classpath:mybatis/mapper/**/*.xml
 spring:
   profiles: dev
   application:
-    name: microservicecloud-dept
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource #dataSource類型
-    driver-class-name: org.gjt.mm.mysql.Driver #驅動類型
-    url: jdbc:mysql://localhost:3306/cloudDB01 #連接DB名字
-    username: root
-    password: 1004
-    dbcp2:
-      min-idle: 5 #資料庫連接池中最少的連接數
-      initial-size: 5 #初始化連接數
-      max-idle: 5 #最多連接數
-      max-wait-millis: 200 #最大等待獲取連接的時間
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/
-  instance:
-    instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
-    prefer-ip-address: true #訪問路徑可以顯示IP地址
-
-info:
-  app.name: myself-microservicecloud
-  company.name: www.myself.com
-  build.artifactId: @project.artifactId@ #配合父工程build配置的$開頭$結尾
-  build.version: @project.version@
+    name: microservicecloud-dept-dev
 
 ---
+
 server:
   port: 8001
-
-mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.myself.springcloud.entity
-  mapper-locations:
-    - classpath:mybatis/mapper/**/*.xml
 spring:
   profiles: test
   application:
-    name: microservicecloud-dept
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource #dataSource類型
-    driver-class-name: org.gjt.mm.mysql.Driver #驅動類型
-    url: jdbc:mysql://localhost:3306/cloudDB02 #連接DB名字
-    username: root
-    password: 1004
-    dbcp2:
-      min-idle: 5 #資料庫連接池中最少的連接數
-      initial-size: 5 #初始化連接數
-      max-idle: 5 #最多連接數
-      max-wait-millis: 200 #最大等待獲取連接的時間
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/
-  instance:
-    instance-id: microservicecloud-dept8001 #設置註冊到Eureka的微服務的ID標示
-    prefer-ip-address: true #訪問路徑可以顯示IP地址
+    name: microservicecloud-dept-test
 
-info:
-  app.name: myself-microservicecloud
-  company.name: www.myself.com
-  build.artifactId: @project.artifactId@ #配合父工程build配置的$開頭$結尾
-  build.version: @project.version@
 
